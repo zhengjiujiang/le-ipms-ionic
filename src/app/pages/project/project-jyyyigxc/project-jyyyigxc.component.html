@@ -1,0 +1,63 @@
+<ipms-project-info-card title="项目经营成效" icon="../../../../assets/images_app/2.png">
+  <section class="static">
+    <p>产值完成<code>{{ (dataList.currentApprovedValues / dataList.amount).toFixed(2) }}</code>%</p>
+  </section>
+  <section class="extra">
+    <ion-grid class="first-grid">
+      <!--<ion-row *ngFor="let item of dataList">
+        <ion-col *ngFor="let data of item">
+          <h2>{{ data?.name }}</h2>
+          <p>{{ data?.value }}</p>
+        </ion-col>
+      </ion-row>-->
+      <ion-row>
+        <ion-col>
+          <h2>累计批准产值</h2>
+          <p>{{ dataList.currentApprovedValues }}万元</p>
+        </ion-col>
+        <ion-col>
+          <h2>累计实际成本</h2>
+          <p>{{ dataList.completedActualCost }}万元</p>
+        </ion-col>
+        <ion-col>
+          <h2>累计资金流入</h2>
+          <p>{{ dataList.receivedValues }}万元</p>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <h2>累计申请产值</h2>
+          <p>{{ dataList.currentApplyValues }}万元</p>
+        </ion-col>
+        <ion-col>
+          <h2>项目营业收入</h2>
+          <p>{{ dataList.operatingIncome }}万元</p>
+        </ion-col>
+        <ion-col>
+          <h2>累计资金流出</h2>
+          <p>{{ dataList.sumExpenditureValues }}万元</p>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-grid class="second-grid">
+      <ion-row>
+        <ion-col>
+          <div echarts [options]="chartsOptions[0]"></div>
+          <h2>累计批准产值占比</h2>
+          <p>累计批准产值/项目合同额</p>
+        </ion-col>
+        <ion-col>
+          <div echarts [options]="chartsOptions[1]"></div>
+          <h2>累计收款占比</h2>
+          <p>累计资金流入/项目合同额</p>
+        </ion-col>
+        <ion-col>
+          <div echarts [options]="chartsOptions[2]"></div>
+          <h2>资金到位率</h2>
+          <p>累计收到资金/累计批准产值</p>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <div echarts [options]="chartsOptions[3]"></div>
+  </section>
+</ipms-project-info-card>

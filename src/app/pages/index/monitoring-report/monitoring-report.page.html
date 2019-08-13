@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>监测报告</ion-title>
+    <ion-buttons slot="end">
+      <ion-button shape="round" (click)="openPicker();">
+        <ion-icon name="calendar"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<!--<ion-content class="content">
+  <main>
+    <p>{{ Data?.time }}，电力工程事业部重点关注项目共{{ Data?.allProject }}个。其中履约关注项目共{{ Data?.performanceProject }}个，精英关注项目共{{ Data?.eliteProject }}个，涉诉关注项目共{{ Data?.lawsuitProject }}个。</p>
+    <p>现将2019年3月电力工程事业部重点关注项目情况如下：</p>
+  </main>
+  <ion-refresher #refresher slot="fixed" (ionRefresh)="onProjectsReload(refresher);">
+    <ion-refresher-content refreshingSpinner="dots">
+    </ion-refresher-content>
+  </ion-refresher>
+  <ipms-project-list [projects]="projects" (projectClick)="onProjectClick($event);"></ipms-project-list>
+  <ion-infinite-scroll #infiniteScroll (ionInfinite)="loadProjects(infiniteScroll);">
+    <ion-infinite-scroll-content loadingSpinner="dots"></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>-->
+<ion-content>
+  <pdf-viewer [src]="pdfSrc2"
+              [page]="page"
+              [original-size]="true"
+              style="display: block;"
+  ></pdf-viewer>
+</ion-content>

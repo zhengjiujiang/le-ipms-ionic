@@ -1,0 +1,66 @@
+
+:host {
+  display: block;
+  margin-bottom: 0.8rem;
+  .static {
+    > p {
+      margin: 0.5rem 0 1rem 0;
+      font-size: 1.2rem;
+      text-align: center;
+      > code {
+        color: #4B7902;
+        margin: 0px 0.2rem;
+        font-size: 2rem;
+        font-weight: bold;
+      }
+    }
+  }
+  .extra {
+    > ion-grid.first-grid {
+      padding: 0.2rem 0 0 0;
+      ion-row {
+        & + ion-row {
+          margin-top: 1rem;
+        }
+        ion-col {
+          padding: 0 0.5rem;
+          border-right: 1px solid #e6e6e6;
+          &:last-child {
+            border-right: none;
+          }
+          > h2 {
+            color: #aaaaaa;
+            margin: 0;
+            font-size: 0.8rem;
+          }
+          > p {
+            margin: 0.2rem 0 0 0;
+          }
+        }
+      }
+    }
+    > ion-grid.second-grid {
+      > ion-row {
+        > ion-col {
+          p {
+            margin: 0;
+            font-size: 0.6rem; 
+            text-align: center;
+          }
+          h2 {
+            margin: 0;
+            font-size: 0.8rem;
+            text-align: center;
+          }
+          > div {
+            height: 100px;
+            margin-bottom: 0.2rem;
+          }
+        }
+      }
+    }
+    > div {
+      height: 250px;
+    }
+  }
+}

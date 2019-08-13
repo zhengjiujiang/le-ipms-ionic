@@ -1,0 +1,11 @@
+
+::ng-deep {
+  ion-searchbar {
+    .searchbar-cancel-button {
+      display: block !important;
+    }
+    .searchbar-search-icon.sc-ion-searchbar-md {
+      display: none !important;
+    }
+  }
+}

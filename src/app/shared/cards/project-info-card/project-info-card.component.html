@@ -1,0 +1,16 @@
+<header>
+  <img class="icon" [src]="icon" />
+  <h2>{{ title }}</h2>
+  <a *ngIf="expandable" (click)="expand = !expand;">
+    <ion-ripple-effect></ion-ripple-effect>
+    <ion-icon name="ios-arrow-up"></ion-icon>
+  </a>
+</header>
+<main>
+  <section>
+    <ng-content></ng-content>
+  </section>
+  <section class="extra" [@extra]="expand ? 'expand' : 'unexpand'">
+    <ng-content select=".extra"></ng-content>
+  </section>
+</main>

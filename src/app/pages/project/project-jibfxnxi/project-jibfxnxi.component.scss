@@ -1,0 +1,47 @@
+
+:host {
+  display: block;
+  margin-bottom: 0.8rem;
+  ion-grid {
+    padding: 0.2rem 0 0 0;
+    ion-row {
+      & + ion-row {
+        margin-top: 1rem;
+      }
+      ion-col {
+        padding: 0 0.5rem;
+        overflow: hidden;
+        border-right: 1px solid #e6e6e6;
+        &:last-child {
+          border-right: none;
+        }
+        > h2 {
+          color: #aaaaaa;
+          margin: 0;
+          font-size: 0.8rem;
+        }
+        > p {
+          margin: 0.2rem 0 0 0;
+        }
+      }
+    }
+  }
+  .extra {
+    display: table;
+    padding-top: 0.5rem;
+    table-layout: fixed;
+    > div {
+      display: table-row;
+      > p {
+        display: table-cell;
+        padding: 0.2rem 0;
+        &:first-child {
+          color: #aaaaaa;
+          white-space: nowrap;
+          padding-left: 8px;
+          padding-right: 1rem;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,56 @@
+
+:host {
+  height: 0.5rem;
+  display: block;
+  position: relative;
+  margin-top: 1.25rem;
+  margin-bottom: 1rem;
+  border-radius: 0.25rem;
+  background-color: #d4d4d4;
+  .point {
+    width: 3px;
+    bottom: 0;
+    height: 0.3rem;
+    display: block;
+    position: absolute;
+    background-color: #FFF;
+    > span {
+      top: 0.4rem;
+      color: #7f7f7f;
+      display: inline-block;
+      position: absolute;
+      font-size: 0.6rem;
+      transform: translateX(-50%);
+    }
+  }
+  > .progress {
+    height: 100%;
+    display: block;
+    position: relative;
+    border-radius: 0.25rem;
+    > .progress-negative{
+      height: 100%;
+      display: block;
+      position: relative;
+      border-radius: 0.25rem;
+      background: #ffffff;
+    }
+    > .prominent {
+      top: 0;
+      right: 0;
+      width: 0.8rem;
+      height: 0.8rem;
+      display: block;
+      position: absolute;
+      transform: translate(50%, -0.15rem);
+      border-radius: 50%;
+      > .value-indicator {
+        right: -50%;
+        bottom: 0.8rem;
+        display: block;
+        position: absolute;
+        font-size: 1rem;
+      }
+    }
+  }
+}

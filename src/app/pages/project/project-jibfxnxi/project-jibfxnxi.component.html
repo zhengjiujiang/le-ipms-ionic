@@ -1,0 +1,62 @@
+<ipms-project-info-card title="项目基本信息" icon="../../../../assets/images_app/1.svg">
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <h2>主体责任单位</h2>
+        <p>-</p>
+      </ion-col>
+      <ion-col>
+        <h2>项目规模</h2>
+        <p>{{ data?.scale }}</p>
+      </ion-col>
+      <ion-col>
+        <h2>项目合同额</h2>
+        <p>{{ data?.amountBillion }}亿元</p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <h2>项目状态</h2>
+        <p>{{ data?.projectStatusName }}</p>
+      </ion-col>
+      <ion-col>
+        <h2>计划开工日期</h2>
+        <p>{{ data?.planStartDate }}</p>
+      </ion-col>
+      <ion-col>
+        <h2>计划完工日期</h2>
+        <p>{{ data?.planEndDate }}</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <section class="extra">
+    <div>
+      <p>项目地址</p>
+      <p>{{ data?.address }}</p>
+    </div>
+    <div>
+      <p>业主名称</p>
+      <p>{{ data?.owner }}</p>
+    </div>
+    <div>
+      <p>工程类别</p>
+      <p>{{ data?.typeName }}</p>
+    </div>
+    <div>
+      <p>项目经理</p>
+      <p>{{ data?.manager }}</p>
+    </div>
+    <div>
+      <p>质量验收标准</p>
+      <p>{{ data?.standard }}</p>
+    </div>
+    <div>
+      <p>监理单位</p>
+      <p>{{ data?.controlOrg }}</p>
+    </div>
+    <div>
+      <p>设计单位</p>
+      <p>{{ data?.designOrg }}</p>
+    </div>
+  </section>
+</ipms-project-info-card>

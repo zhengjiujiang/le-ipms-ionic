@@ -1,0 +1,5 @@
+<ipms-project-info-card title="项目月报" icon="../../../../assets/images_app/4.svg" [expandable]="false">
+  <section class="static">
+    <a *ngFor="let item of monthlyReport" (click)="downLoadMonthlyReport(item.monthlyReportDbId)">{{ item.monthlyReportName }}</a>
+  </section>
+</ipms-project-info-card>

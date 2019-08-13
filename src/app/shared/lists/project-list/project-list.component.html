@@ -1,0 +1,10 @@
+<div class="project-row" *ngFor="let project of projects" (click)="onProjectClick(project, $event);">
+  <div>
+    <h2>{{ project.projectName }}</h2>
+    <p>{{ project.orgName }}/{{ project.amount }}亿元/{{ project.typeName }}/2×1000MW</p>
+    <div>
+      <span *ngFor="let type of project.projectHealthyVO?.abnormalType">{{ type }}异常</span>
+    </div>
+  </div>
+  <p [style.color]="projectLevelColors[project.projectHealthyVO?.healthSocreCode]">{{ project.projectHealthyVO?.healthSocreCode }}</p>
+</div>

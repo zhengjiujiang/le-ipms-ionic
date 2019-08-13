@@ -1,0 +1,39 @@
+<ipms-project-info-card title="项目健康度评测" icon="../../../../assets/images_app/2.svg">
+  <div class="static">
+    <p [style.color]="projectLevelColors[data?.healthSocreCode]">{{ data?.healthSocreCode }}</p>
+    <div>
+      <ipms-project-status-tag *ngFor="let item of data?.abnormalType">{{ item }}</ipms-project-status-tag>
+      <!--<ipms-project-status-tag>进度异常</ipms-project-status-tag>
+      <ipms-project-status-tag>进度异常</ipms-project-status-tag>-->
+    </div>
+  </div>
+  <section class="extra">
+    <ipms-progress-wrapper *ngFor="let item of data?.projectHealthTargets" [name]="item?.targetName" [data]="item">
+    <ipms-chris-progress-bar [unit]="item?.targetValueType === 0 ? null : '%'"  [color]="'#2ed232'" [value]="item?.healthMap.data || 0" [startValue]="item?.targetRangeMin" [endValue]="item?.targetRangeMax" [points]="item?.points"></ipms-chris-progress-bar>
+  </ipms-progress-wrapper>
+    <!--<ipms-progress-wrapper name="里程碑偏差（天）">
+      <ipms-chris-progress-bar [color]="'#2ed232'" [value]="56" [startValue]="0" [endValue]="200" [points]="[60, 150]"></ipms-chris-progress-bar>
+    </ipms-progress-wrapper>
+    <ipms-progress-wrapper name="工作按期完成率">
+      <ipms-chris-progress-bar unit="%" [color]="'#2ed232'" [value]="91.67" [startValue]="0" [endValue]="100" [points]="[70, 85]"></ipms-chris-progress-bar>
+    </ipms-progress-wrapper>
+    <ipms-progress-wrapper name="进度绩效指数SPI">
+      <ipms-chris-progress-bar [color]="'#f59a23'" [value]="0.824" [startValue]="0" [endValue]="2" [points]="[0.75, 0.9, 1.1, 1.25]"></ipms-chris-progress-bar>
+    </ipms-progress-wrapper>
+    <ipms-progress-wrapper name="费用绩效指数CPI">
+      <ipms-chris-progress-bar [color]="'#2ed232'" [value]="1.097" [startValue]="0" [endValue]="2" [points]="[0.9, 0.97]"></ipms-chris-progress-bar>
+    </ipms-progress-wrapper>
+    <ipms-progress-wrapper name="资金到位率">
+      <ipms-chris-progress-bar unit="%" [color]="'#2ed232'" [value]="91.78" [startValue]="0" [endValue]="100" [points]="[70, 85]"></ipms-chris-progress-bar>
+    </ipms-progress-wrapper>
+    <ipms-progress-wrapper name="利润率">
+      <ipms-chris-progress-bar unit="%" [color]="'#2ed232'" [value]="97" [startValue]="0" [endValue]="100" [points]="[70, 85]"></ipms-chris-progress-bar>
+    </ipms-progress-wrapper>
+    <ipms-progress-wrapper name="安全问题闭环率">
+      <ipms-chris-progress-bar unit="%" [color]="'#2ed232'" [value]="50" [startValue]="0" [endValue]="100" [points]="[70, 85]"></ipms-chris-progress-bar>
+    </ipms-progress-wrapper>
+    <ipms-progress-wrapper name="质量问题闭环率">
+      <ipms-chris-progress-bar unit="%" [color]="'#2ed232'" [value]="100" [startValue]="0" [endValue]="100" [points]="[70, 85]"></ipms-chris-progress-bar>
+    </ipms-progress-wrapper>-->
+  </section>
+</ipms-project-info-card>

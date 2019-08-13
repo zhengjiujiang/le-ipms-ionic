@@ -1,0 +1,52 @@
+#companies-table {
+  width: 100%;
+  table-layout: fixed;
+  thead {
+    tr {
+      th {
+        color: #444;
+        font-size: 0.8em;
+        text-align: center;
+        font-weight: normal;
+        background-color: #E6E6E6;
+      }
+    }
+  }
+  tbody {
+    tr {
+      td {
+        font-size: 0.8em;
+        text-align: center;
+        border-bottom: 1px solid #e6e6e6;
+        &:nth-child(3) {
+          color: #03b252;
+          font-weight: bold;
+        }
+        &.company-name {
+          overflow: hidden;
+          text-align: left;
+          white-space: nowrap;
+          padding-left: 0.5rem;
+          text-overflow: ellipsis;
+        }
+      }
+      &:hover {
+        td {
+          background-color: rgba(0, 0, 0, 0.1);
+        }
+      }
+      &:last-child {
+        td {
+          border-bottom: none;
+        }
+      }
+    }
+  }
+  thead, tbody {
+    tr {
+      th, td {
+        padding: 1em 0;
+      }
+    }
+  }
+}

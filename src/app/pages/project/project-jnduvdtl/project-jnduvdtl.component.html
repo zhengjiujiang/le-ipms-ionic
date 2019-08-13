@@ -1,0 +1,28 @@
+<ipms-project-info-card title="项目进度状态" icon="../../../../assets/images_app/1.png">
+  <section class="static">
+    <p>进度完成<code>{{ progress }}</code>%</p>
+  </section>
+  <section class="extra">
+    <header>
+      <p class="extra-h4">当前里程碑节点：</p>
+      <p>{{ milestoneData?.milestoneName }}</p>
+      <label>计划时间：{{ milestoneData?.planDate }}</label>
+    </header>
+    <main>
+      <p>关键路径：</p>
+      <article *ngFor="let item of keyLinkData; index as index">
+        <span>{{ index + 1 }} {{ item?.name }}</span>
+        <ipms-chris-progress-bar [color]="'#03b252'" [value]="item?.nowDateTimestamp" [startValue]="item?.planStartDateTimestamp" [endValue]="item?.planCompleteDateTimestamp" [showValue]="false"></ipms-chris-progress-bar>
+        <p>
+          <span>计划开始时间：{{ item?.planStartDate }}</span>
+          <span>计划完成时间：{{ item?.planCompleteDate }}</span>
+        </p>
+        <ipms-chris-progress-bar [color]="'#02a7fa'" [value]="item?.nowDateTimestamp" [startValue]="item?.planStartDateTimestamp" [endValue]="item?.completeDateTimestamp" [showValue]="false" [showNegative]="true" [negativeValue]="item?.startDateTimestamp"></ipms-chris-progress-bar>
+        <p>
+          <span>实际开始时间：{{ item?.startDate }}</span>
+          <span>实际完成时间：{{ item?.completeDate }}</span>
+        </p>
+      </article>
+    </main>
+  </section>
+</ipms-project-info-card>

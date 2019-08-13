@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button [text]="''"></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button shape="round" (click)="openPicker();">
+        <ion-icon name="calendar"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>{{ pageTitle || '项目详情' }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <section class="project-image-slides">
+    <ion-slides #slides [pager]="false" (ionSlideDidChange)="onSlideDidChange(slides.getActiveIndex());">
+      <ion-slide *ngFor="let item of slideImages;">
+        <img [src]="item" />
+      </ion-slide>
+    </ion-slides>
+    <ipms-radio-button [(activeCode)]="slideIndex" [items]="[{ text: '平面图', code: 0 }, { text: '总览图', code: 1 }]"></ipms-radio-button>
+  </section>
+  <ipms-project-jibfxnxi name="项目基本信息" [data]="basicData"></ipms-project-jibfxnxi>
+  <ipms-project-jmkhdupyce name="项目健康度评测" [code]="projectCode" [date]="date"></ipms-project-jmkhdupyce>
+  <ipms-project-yydeviffxi name="项目赢得值分析" [code]="projectCode" [date]="date"></ipms-project-yydeviffxi>
+  <ipms-project-jnduvdtl name="项目进度状态" [code]="projectCode" [date]="date" [progress]="progress"></ipms-project-jnduvdtl>
+  <ipms-project-jyyyigxc name="项目经营成效" [code]="projectCode" [date]="date"></ipms-project-jyyyigxc>
+  <ipms-project-ytbk name="项目月报" [code]="projectCode" [date]="date"></ipms-project-ytbk>
+</ion-content>

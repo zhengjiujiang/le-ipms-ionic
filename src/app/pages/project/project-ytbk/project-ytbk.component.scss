@@ -1,0 +1,14 @@
+
+:host {
+  display: block;
+  margin-bottom: 0.8rem;
+  .static {
+    padding: 0.5rem 0 0 0;
+    > a {
+      display: block;
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.1);
+      }
+    }
+  }
+}

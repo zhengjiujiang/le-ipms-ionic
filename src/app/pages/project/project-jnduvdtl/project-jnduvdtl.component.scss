@@ -1,0 +1,55 @@
+
+:host {
+  display: block;
+  margin-bottom: 0.8rem;
+  .static {
+    > p {
+      margin: 0.5rem 0 1rem 0;
+      font-size: 1.2rem;
+      text-align: center;
+      > code {
+        color: #4B7902;
+        margin: 0px 0.2rem;
+        font-size: 2rem;
+        font-weight: bold;
+      }
+    }
+  }
+  .extra{
+    padding: 0 .5rem 0 2rem;
+    > header{
+      > .extra-h4{
+        font-size: 18px;
+        color: #3b84d6;
+      }
+      > p{
+        margin: 0;
+        font-size: 14px;
+      }
+      > label{
+        display: inline-block;
+        color: #7f7f7f;
+        font-size: 14px;
+      }
+    }
+    > main{
+      > p{
+        font-size: 18px;
+        color: #3b84d6;
+        margin-left: 1rem;
+      }
+      > article{
+        font-size: 12px;
+        margin-top: 1rem;
+
+        >p{
+          margin: 0;
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          color: #7f7f7f;
+        }
+      }
+    }
+  }
+}

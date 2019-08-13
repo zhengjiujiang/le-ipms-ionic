@@ -1,0 +1,3 @@
+<ng-container *ngFor="let item of items;">
+  <a [class.active]="activeCode === item.code" (click)="onItemClick(item);">{{ item.text }}</a>
+</ng-container>

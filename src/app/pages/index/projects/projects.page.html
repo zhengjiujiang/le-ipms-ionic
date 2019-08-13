@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="end">
+      <ion-button shape="round" (click)="openSearchModal();">
+        <ion-icon name="search"></ion-icon>
+      </ion-button>
+      <!-- <ion-button shape="round" (click)="showMenuPopover($event);">
+        <ion-icon name="more"></ion-icon>
+      </ion-button> -->
+      <ion-button shape="round" (click)="showSortAlert();">
+        <ion-icon name="md-funnel"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>项目卡片</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-refresher #refresher slot="fixed" (ionRefresh)="onProjectsReload(refresher);">
+    <ion-refresher-content refreshingSpinner="dots">
+    </ion-refresher-content>
+  </ion-refresher>
+  <ipms-project-list [projects]="projects" (projectClick)="onProjectClick($event);"></ipms-project-list>
+  <ion-infinite-scroll #infiniteScroll (ionInfinite)="loadProjects(infiniteScroll);">
+    <ion-infinite-scroll-content loadingSpinner="dots"></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

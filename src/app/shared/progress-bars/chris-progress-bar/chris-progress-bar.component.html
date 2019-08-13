@@ -1,0 +1,11 @@
+<div class="progress" [style.width.%]="progress" [style.background-color]="color" [ngStyle]="{ 'border': showNegative ? '1px solid black' : null }">
+  <div class="prominent" [style.background-color]="color" *ngIf="showValue">
+    <span class="value-indicator" [style.color]="color">{{ value }}{{ unit }}</span>
+  </div>
+  <div class="progress-negative" [style.width.%]="getNegativeProgress" *ngIf="showNegative"></div>
+</div>
+<ng-container *ngFor="let point of points; let index = index;">
+  <div class="point" [style.left.%]="getPointProgress(point)">
+    <span class="point-indicator">{{ point }}{{ unit }}</span>
+  </div>
+</ng-container>

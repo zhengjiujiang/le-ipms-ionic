@@ -1,0 +1,52 @@
+<ipms-project-info-card title="项目赢得值分析" icon="../../../../assets/images_app/3.svg">
+  <section class="static">
+    <h2>
+      <ion-text color="primary">{{ data?.analysis?.analysis.split('|')[1] }}</ion-text>
+    </h2>
+  </section>
+  <section class="extra">
+    <div class="charts-container" echarts [options]="chartsOption"></div>
+    <ion-grid>
+      <ion-row *ngFor="let item of list">
+        <ion-col *ngFor="let data of item">
+          <h2>{{ data?.name }}</h2>
+          <p>{{ data?.value }}</p>
+        </ion-col>
+      </ion-row>
+      <!--<ion-row>
+        <ion-col>
+          <h2>已完工作预算费用</h2>
+          <p>6100万元</p>
+        </ion-col>
+        <ion-col>
+          <h2>计划工作预算费用</h2>
+          <p>5200万元</p>
+        </ion-col>
+        <ion-col>
+          <h2>已完工作实际费用</h2>
+          <p>8800万元</p>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <h2>已完工作预算费用</h2>
+          <p>6100万元</p>
+        </ion-col>
+        <ion-col>
+          <h2>计划工作预算费用</h2>
+          <p>5200万元</p>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <h2>计划工作预算费用</h2>
+          <p>5200万元</p>
+        </ion-col>
+        <ion-col>
+          <h2>已完工作实际费用</h2>
+          <p>8800万元</p>
+        </ion-col>
+      </ion-row>-->
+    </ion-grid>
+  </section>
+</ipms-project-info-card>

@@ -1,0 +1,54 @@
+
+:host {
+  display: block;
+}
+
+.project-row {
+  display: flex;
+  padding: 0.5rem 1rem;
+  flex-flow: row nowrap;
+  align-items: center;
+  border-bottom: 1px solid #e6e6e6;
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+  &:last-child {
+    border-bottom: none;
+  }
+  > div {
+    flex: 1 1 auto;
+    display: flex;
+    flex-flow: column nowrap;
+    > h2 {
+      margin: 0;
+      font-size: 1rem;
+    }
+    > p {
+      color: rgba($color: #000000, $alpha: 0.5);
+      margin: 0.2rem 0;
+      font-size: 0.85rem;
+    }
+    > div {
+      font-size: 0.8rem;
+      > span {
+        color: #3877c5;
+        padding: 0.1rem 0.2rem;
+        display: inline-block;
+        border-radius: 3px;
+        border: 1px solid #3877c5;
+        background-color: #cfdeef;
+        & + span {
+          margin-left: 0.5rem;
+        }
+      }
+    }
+  }
+  > p {
+    flex: 0 0 auto;
+    margin: 0;
+    font-size: 1.5rem;
+    &.A {
+      color: #00c297;
+    }
+  }
+}

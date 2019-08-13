@@ -1,0 +1,6 @@
+<ion-toolbar>
+  <ion-searchbar #searchbar [showCancelButton]="true" (ionCancel)="onCancel();" (keypress)="searchChange($event)" [(ngModel)]="searchContent" placeholder="请输入搜索关键字"></ion-searchbar>
+</ion-toolbar>
+<ion-content>
+  <ipms-project-list [projects]="dataList" (projectClick)="onProjectClick($event);"></ipms-project-list>
+</ion-content>

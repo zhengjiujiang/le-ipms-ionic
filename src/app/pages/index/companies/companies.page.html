@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>首页</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-refresher #refresher slot="fixed" (ionRefresh)="onCompaniesReload(refresher);">
+    <ion-refresher-content refreshingSpinner="dots">
+    </ion-refresher-content>
+  </ion-refresher>
+  <table id="companies-table">
+    <thead>
+      <tr>
+        <th>电工企业</th>
+        <th>接入项目数</th>
+        <th>平均等级</th>
+        <th>红色项目占比</th>
+        <th [style.width.px]="32"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let company of companies;" (click)="onCompanyClick(company);">
+        <td class="company-name">{{ company.orgName }}</td>
+        <td>{{ company.projectNumber }}</td>
+        <td [style.color]="projectLevelColors[company.averageGrade]">{{ company.averageGrade }}</td>
+        <td>{{ company.redProProportion }}%</td>
+        <td>
+          <ion-note>
+            <ion-icon name="arrow-forward"></ion-icon>
+          </ion-note>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</ion-content>

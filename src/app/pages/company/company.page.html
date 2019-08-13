@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button [text]="''"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ pageTitle || '单位详情' }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <section class="text-description">
+    <p>
+      企业目前接入项目共{{ origin?.projectNums || 0 }}个，
+      其中{{ origin?.numD || 0 }}个项目在健康度测评中为红色预警，
+      企业健康度评级为{{ origin?.ave }}。
+    </p>
+    <p>
+      从项目预警类型上分析，出现进度异常的项目{{ origin?.abnormalProcess || 0 }}个，
+      经营异常的项目{{ origin?.abnormalOperate || 0 }}个，
+      HSE异常的项目{{ origin?.abnormalHSE || 0 }}个，
+      质量异常的项目{{ origin?.abnormalQuality || 0 }}个。
+      <ion-text color="danger">综上所述，企业{{ getAnalysisConclusion() }}</ion-text>。
+    </p>
+    <p>
+      汇总项目赢得值分析结果，超预算项目{{ origin?.beyondBudget || 0 }}个，
+      进度滞后项目{{ origin?.abnormalProcess || 0 }}个。
+      <ng-container *ngIf="origin?.bulletin_board?.length > 0">
+        <ion-text color="danger">超预算且进度滞后项目{{ origin?.bulletin_board.length }}个，</ion-text>
+        <ion-text color="danger" *ngIf="origin?.bulletin_board.length > 0">为：{{ origin?.bulletin_board.join('、') }}。</ion-text>
+      </ng-container>
+    </p>
+    <p *ngIf="origin?.typicalPro">
+      企业目前健康度测评等级最低的项目为<ion-text color="danger">{{ origin?.typicalPro?.projectName }}</ion-text>。
+      项目目前已完工里程碑占比{{ origin?.typicalPro?.projectProcess || 0 }}，
+      进度滞后{{ origin?.typicalPro?.milestoneDelay || 0 }}天，
+      已批准产值占比{{ origin?.typicalPro?.outRate || 0 }}%，
+      资金到位率{{ origin?.typicalPro?.moneyInRate || 0 }}%，
+      项目毛利率{{ origin?.typicalPro?.gross || 0 }}%。
+      项目目前处于超预算进度滞后状态，进度偏差SV为{{ origin?.typicalPro?.SV }}万元，
+      费用偏差CV为{{ origin?.typicalPro?.CV }}万元。
+    </p>
+  </section>
+  <section>
+    <ion-item-divider>
+      <ion-label>企业项目列表如下：</ion-label>
+    </ion-item-divider>
+    <ipms-project-list [projects]="origin?.maps" (projectClick)="onProjectClick($event);"></ipms-project-list>
+  </section>
+</ion-content>

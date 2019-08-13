@@ -1,0 +1,25 @@
+
+:host {
+  display: block;
+  border-top: 1px solid #e6e6e6;
+  margin-bottom: 0.8rem;
+  > header {
+    display: flex;
+    padding: 0.5rem 0;
+    flex-flow: row nowrap;
+    align-items: center;
+    > img {
+      flex: 0 0 auto;
+      width: 14px;
+      height: 16px;
+      margin-right: 0.5rem;
+    }
+    > h2 {
+      margin: 0;
+      font-size: 1rem;
+    }
+  }
+  > main {
+    padding: 0.8rem 1rem;
+  }
+}

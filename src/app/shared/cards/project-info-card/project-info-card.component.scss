@@ -1,0 +1,45 @@
+
+:host {
+  display: block;
+  padding: 0.5rem 1rem;
+  background-color: #FFF;
+  &.expand {
+    > header {
+      > a {
+        transform: rotate(180deg);
+      }
+    }
+  }
+  > header {
+    display: flex;
+    padding: 0.2rem 0;
+    flex-flow: row nowrap;
+    align-items: center;
+    > a {
+      display: flex;
+      padding: 0 1rem;
+      position: relative;
+      font-size: 1.2rem;
+      flex-flow: row nowrap;
+      transition: transform 0.5s;
+      align-items: center;
+      justify-content: center;
+    }
+    > h2 {
+      flex: 1 1 auto;
+      margin: 0;
+      font-size: 1.2rem;
+      font-weight: normal;
+    }
+    > .icon {
+      width: 26px;
+      height: 20px;
+      margin-right: 0.5rem;
+    }
+  }
+  > main {
+    .extra {
+      overflow: hidden;
+    }
+  }
+}

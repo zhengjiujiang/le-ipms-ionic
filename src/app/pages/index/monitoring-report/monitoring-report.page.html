@@ -24,9 +24,15 @@
   </ion-infinite-scroll>
 </ion-content>-->
 <ion-content>
-  <pdf-viewer [src]="pdfSrc2"
-              [page]="page"
-              [original-size]="true"
-              style="display: block;"
-  ></pdf-viewer>
+    <pdf-viewer [src]="pdfSrc"
+                (pinchIn)="PinchIn()"
+                (pinchOut)="PinchOut()"
+                (dblclick)="Dblclick()"
+                [page]="page"
+                [original-size]="false"
+                [fit-to-page]="false"
+                [autoresize]="true"
+                [(zoom)]="zoom"
+                style="display: block;"
+    ></pdf-viewer>
 </ion-content>

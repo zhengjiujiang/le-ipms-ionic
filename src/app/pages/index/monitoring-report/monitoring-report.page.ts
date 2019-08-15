@@ -27,6 +27,8 @@ export class MonitoringReportPage implements OnInit {
   public selectedDate: any = '2';
   private dates = getDateRange(12);
   private date: { year: string, month: string };
+  public zoom: number = 1;
+  public dbClick: boolean = false;
   public projects: Array<Project>;
   constructor(
       private readonly LoadingController: LoadingController,
@@ -67,8 +69,27 @@ export class MonitoringReportPage implements OnInit {
         }))
         .subscribe();*/
     // this.getMonitoringReport(year, month)
-      this.pdfSrc2 = `${this.settingsService.server.apiPrefix}/getMonthlyReportPDF?type=2&dimYear=${this.date.year}&dimMonth=${this.date.month}`;
+      this.pdfSrc2 = `${this.settingsService.server.apiPrefix}/getMonthlyReportPDF?type=1&dimYear=${this.date.year}&dimMonth=${this.date.month}`;
 
+  }
+  public onDoubleTap(e){
+      alert(JSON.stringify(e.type))
+      // this.zoom += 0.1;
+  }
+  public PinchIn(){
+      this.zoom -= 0.1;
+  }
+  public PinchOut(){
+      this.zoom += 0.1;
+  }
+  public Dblclick(){
+      this.dbClick = !this.dbClick;
+      if (this.dbClick){
+          this.zoom += 0.5;
+
+      } else {
+          this.zoom -= 0.5;
+      }
   }
 /*  public onProjectsReload(refresher: IonRefresher) {
     const { year, month } = this.date;

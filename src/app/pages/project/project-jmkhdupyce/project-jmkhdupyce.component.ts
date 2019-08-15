@@ -28,13 +28,36 @@ export class ProjectJmkhdupyceComponent implements OnInit {
           this.data = response;
           this.data.projectHealthTargets.map((val, index) => {
             index === 2 ? val['points'] = [60, 150] : null; // 里程碑偏差天数
+            index === 2 ? val['maxValue'] = 200 : null; // 里程碑偏差天数
+            index === 2 ? val['minValue'] = 0 : null; // 里程碑偏差天数
+
             index === 3 ? val['points'] = [70, 85] : null;
+            index === 3 ? val['maxValue'] = 100 : null;
+            index === 3 ? val['minValue'] = 0 : null;
+
             index === 0 ? val['points'] = [0.75, 0.9, 1.1, 1.25] : null; // 进度绩效质数spi
+            index === 0 ? val['maxValue'] = 2 : null; // 进度绩效质数spi
+            index === 0 ? val['minValue'] = 0 : null; // 进度绩效质数spi
+
             index === 1 ? val['points'] = [0.9, 0.97] : null;
+            index === 1 ? val['maxValue'] = 1.1 : null;
+            index === 1 ? val['minValue'] = 0.8 : null;
+
             index === 4 ? val['points'] = [70, 85] : null;
+            index === 4 ? val['maxValue'] = 110 : null;
+            index === 4 ? val['minValue'] = 0 : null;
+
             index === 5 ? val['points'] = [-2, -1] : null;
+            index === 5 ? val['maxValue'] = 10 : null;
+            index === 5 ? val['minValue'] = -10 : null;
+
             index === 6 ? val['points'] = [80, 90] : null;
+            index === 6 ? val['maxValue'] = 100 : null;
+            index === 6 ? val['minValue'] = 0 : null;
+
             index === 7 ? val['points'] = [60, 80] : null;
+            index === 7 ? val['maxValue'] = 100 : null;
+            index === 7 ? val['minValue'] = 0 : null;
           })
         }))
         .subscribe()

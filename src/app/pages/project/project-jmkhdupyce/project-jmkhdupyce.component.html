@@ -9,7 +9,7 @@
   </div>
   <section class="extra">
     <ipms-progress-wrapper *ngFor="let item of data?.projectHealthTargets" [name]="item?.targetName" [data]="item">
-    <ipms-chris-progress-bar [unit]="item?.targetValueType === 0 ? null : '%'"  [color]="'#2ed232'" [value]="item?.healthMap.data || 0" [startValue]="item?.targetRangeMin" [endValue]="item?.targetRangeMax" [points]="item?.points"></ipms-chris-progress-bar>
+    <ipms-chris-progress-bar [unit]="item?.targetValueType === 0 ? null : '%'"  [color]="'#2ed232'" [value]="item?.healthMap.data || 0" [startValue]="item?.minValue" [endValue]="item?.maxValue" [points]="item?.points"></ipms-chris-progress-bar>
   </ipms-progress-wrapper>
     <!--<ipms-progress-wrapper name="里程碑偏差（天）">
       <ipms-chris-progress-bar [color]="'#2ed232'" [value]="56" [startValue]="0" [endValue]="200" [points]="[60, 150]"></ipms-chris-progress-bar>

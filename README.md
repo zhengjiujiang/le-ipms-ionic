@@ -8,9 +8,9 @@ Le Ipms Front End Based On Ionic
     <img src="./documents/assets/0.jpg" />
   </div>
   <div style="flex: 1 1 auto; margin-left: 1rem;">
-    <img src="./documents/assets/0.jpg" />
+    <img src="./documents/assets/1.jpg" />
   </div>
   <div style="flex: 1 1 auto; margin-left: 1rem;">
-    <img src="./documents/assets/0.jpg" />
+    <img src="./documents/assets/2.jpg" />
   </div>
 </div>

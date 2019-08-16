@@ -47,9 +47,9 @@ export class ProjectJmkhdupyceComponent implements OnInit {
             index === 4 ? val['maxValue'] = 110 : null;
             index === 4 ? val['minValue'] = 0 : null;
 
-            index === 5 ? val['points'] = [-2, -1] : null;
-            index === 5 ? val['maxValue'] = 10 : null;
-            index === 5 ? val['minValue'] = -10 : null;
+            // index === 5 ? val['points'] = [-2, -1] : null;
+            index === 5 ? val['maxValue'] = 100 : null;
+            index === 5 ? val['minValue'] = 0 : null;
 
             index === 6 ? val['points'] = [80, 90] : null;
             index === 6 ? val['maxValue'] = 100 : null;

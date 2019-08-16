@@ -5,6 +5,7 @@ import { LoadingController } from '@ionic/angular';
 import { Project } from 'src/app/models/public_api';
 import { CompanyService } from 'src/app/services/company.service';
 import { getDateRange } from 'src/app/shared/utils/date-range';
+import { ProjectService } from '../../services/project.service';
 
 @Component({
   selector: 'ipms-company',
@@ -16,7 +17,7 @@ export class CompanyPage implements OnInit {
   public origin: any;
   private date: { year: string, month: string };
   private companyCode: string;
-
+  public list: Array<any> = new Array<any>();
   public projects = new Array(10).fill(0).map((_, index) => {
     return {
       name: `华电句容二期项目-${ index + 1 }`,
@@ -28,6 +29,7 @@ export class CompanyPage implements OnInit {
       private readonly router: Router,
       private readonly companyService: CompanyService,
       private readonly activatedRoute: ActivatedRoute,
+      private readonly projectService: ProjectService,
       private readonly loadingController: LoadingController,) {
 
   }
@@ -47,6 +49,10 @@ export class CompanyPage implements OnInit {
       }))
       .pipe(tap(data => {
         this.origin = data;
+      }))
+      .pipe(mergeMap(() => {
+        return this.listData(year, month, this.companyCode)
+            .pipe(tap((response => this.list = response)))
       }))
       .subscribe();
   }
@@ -80,6 +86,10 @@ export class CompanyPage implements OnInit {
   private fetchData(year: string, month: string, companyCode: string) {
     return this.companyService.getA(year, month, companyCode)
       .pipe(map(response => response.data));
+  }
+  private listData(year: string, month: string, companyCode: string){
+    return this.projectService.getProjectByCode(year, month, companyCode)
+        .pipe(map(response => response.data))
   }
 
 }

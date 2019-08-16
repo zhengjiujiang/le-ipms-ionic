@@ -26,6 +26,19 @@ export class ProjectService {
       },
     });
   }
+  public getProjectByCode(dimYear: string, dimMonth: string, orgCode: string='', page: number=1, limit: number=10){
+    return this.http.post<any>(`${ this.settings.server.apiPrefix }/project/card/list/search`, {
+      page: {
+        page,
+        limit,
+      },
+      filter: {
+        dimYear,
+        dimMonth,
+        orgCode,
+      },
+    });
+  }
 
   public getTargets(filters: any = {}, subject: string, targetCodeList: Array<string>, pageNum?: number, pageSize?: number,) {
     return this.http.post<any>(`${ this.settings.server.apiPrefix }/project/targets`, {

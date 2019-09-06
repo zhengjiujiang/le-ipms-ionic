@@ -20,7 +20,7 @@
         <ipms-chris-progress-bar [color]="'#02a7fa'" [value]="item?.nowDateTimestamp" [startValue]="item?.planStartDateTimestamp" [endValue]="item?.completeDateTimestamp" [showValue]="false" [showNegative]="true" [negativeValue]="item?.startDateTimestamp"></ipms-chris-progress-bar>
         <p>
           <span>实际开始时间：{{ item?.startDate }}</span>
-          <span>实际完成时间：{{ item?.completeDate }}</span>
+          <span>实际完成时间：{{ item?.completeDateTimestamp > item?.planCompleteDateTimestamp ? item?.completeDate : item?.planCompleteDate }}</span>
         </p>
       </article>
     </main>

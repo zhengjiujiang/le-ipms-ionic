@@ -47,7 +47,6 @@ export class ProjectJnduvdtlComponent implements OnInit {
             val['completeDateTimestamp'] =  new Date(val.completeDate).getTime() < new Date().getTime() ? new Date().getTime() : new Date(val.completeDate).getTime();
             val['nowDateTimestamp'] = new Date().getTime();
           })
-
         }))
         .subscribe()
   }

@@ -47,6 +47,11 @@ export class ProjectJyyyigxcComponent implements OnInit {
     this.getBusinessEffectivenessLine(this.code, this.date.year, this.date.month)
         .pipe(tap(response => {
           this.dataLine = this.getLineData(response.targets.income_expenditure_compared);
+          // @ts-ignore
+          // @ts-ignore
+          // @ts-ignore
+          // @ts-ignore
+          // @ts-ignore
           this.chartsOptions[3] = {
             grid: {
               top: 40,
@@ -71,6 +76,7 @@ export class ProjectJyyyigxcComponent implements OnInit {
                 // data:  new Array(5).fill(0).map(() => ({ value: Number.parseFloat((Math.random() * 100).toFixed(2)), unit: '万元' })),
                 data:  this.dataLine[2],
                 barMaxWidth: 42,
+                // color: '#3f86cf'
               },
               {
                 type: 'bar',
@@ -78,6 +84,7 @@ export class ProjectJyyyigxcComponent implements OnInit {
                 // data:  new Array(5).fill(0).map(() => ({ value: Number.parseFloat((Math.random() * 100).toFixed(2)), unit: '万元' })),
                 data:  this.dataLine[1],
                 barMaxWidth: 42,
+                // color: '#ffaa56'
               },
             ],
             legend: {

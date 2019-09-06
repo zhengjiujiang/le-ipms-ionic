@@ -3,9 +3,11 @@ import { CommonModule } from '@angular/common';
 import { ChrisProgressBarComponent } from './chris-progress-bar/chris-progress-bar.component';
 
 @NgModule({
-  imports: [
-    CommonModule
-  ],
+    imports: [
+        CommonModule,
+        CommonModule,
+        CommonModule
+    ],
   exports: [
     ChrisProgressBarComponent,
   ],

@@ -33,6 +33,8 @@ export class ChrisProgressBarComponent implements OnInit {
   @Input()
   public showNegative : boolean = false;
 
+  public closeRight: boolean = true;
+
   get progress() {
     return ((this.value - this.startValue) / (this.endValue - this.startValue)) * 100;
   }
@@ -44,6 +46,7 @@ export class ChrisProgressBarComponent implements OnInit {
   }
 
   public ngOnInit() {
+    this.progress > 0 ? this.closeRight = true : this.closeRight = false;
   }
 
   public getPointProgress(point: number) {
